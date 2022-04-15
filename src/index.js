@@ -2,21 +2,21 @@ import './style/style.css';
 
 
 
-// window.crypto.subtle.generateKey(
-//     {
-//     name: "RSA-OAEP",
-//     // Consider using a 4096-bit key for systems that require long-term security
-//     modulusLength: 2048,
-//     publicExponent: new Uint8Array([1, 0, 1]),
-//     hash: "SHA-256",
-//     },
-//     true,
-//     ["encrypt", "decrypt"]
-//   ).then(keypair => {
-//       console.log(keypair);
-//       exportCryptoKey(keypair.privateKey);
-//       exportPublicCryptoKey(keypair.publicKey);
-//   });
+window.crypto.subtle.generateKey(
+    {
+    name: "RSA-OAEP",
+    // Consider using a 4096-bit key for systems that require long-term security
+    modulusLength: 2048,
+    publicExponent: new Uint8Array([1, 0, 1]),
+    hash: "SHA-256",
+    },
+    true,
+    ["encrypt", "decrypt"]
+  ).then(keypair => {
+      console.log(keypair);
+      exportCryptoKey(keypair.privateKey);
+      exportPublicCryptoKey(keypair.publicKey);
+  });
   var publicKey;
   var privateKey;
 
@@ -42,10 +42,10 @@ import './style/style.css';
     const result = importPrivateKey(pemExported);
   result.then(res => {
       console.log(res);
-      let cat = window.atob(`Q8xTOK9LjCjdllx+P0ugfTgE7mCiBJ/N3QXyZML5ru+bbO3CCxSw/rd94XKiyY8y/M/qb+i5f7in5sOB+qpWCFliWe5JqoF/0ONz39/oO3VuFqc+VCp236730EkifiqL8i0Jm1Md7EaXVHD0yg0hvP82yMZzV+5KCbe7SYWQPsj3e4Ee5BJqB+RzSwdtXBQWTRGQDQLbJciiWDchfWFjw1UgkyRk5ywjwDzEta11zwmVCrQYEa/EgctcMD4ZUZfNRFiWecbk0h4RwHat15ABHTnK6MtLw3WZshSoSmuU+ZUVqi4/J7O/Y2ly+45ZVeTekYfoib0tl6F201CFamhtGQ==`);
+      let cat = window.atob(`nVvGGjx9rINgaElXEE6o9XILyHQDW3MKZDSY8T7fw24ABSZtc+NJmh+yy8W6SXsVG2kdTPT/Vs3XHai1xDlPaoETW/FPJxsynK99oAwJIlSxHgC2UjsjUsGEts2vtJayeYbcMkyaK/NRcI2Wo3zowkkTLbGhKr4o9ukYnY58PSWgdNI5EqA9m5tfAEzt2LOI3X/C8KTr62x5RN/5i6Qa0uwUaNId/qNtHP9bd/XF3jJrknfuNeN40mXt9shq2cwRfisv83+TWPW4B+ZF13oVIoFQ6gK/TSZ7zWzDqXoFpjHentuiQ1CaFX9bEt9jJRr/ROjSNSlAe7GSwAqS/Q1+KA==`);
     decryptMessage(res, str2ab(cat)).then(res => {
         let dec = new TextDecoder();
-        console.log(dec.decode(res));
+        console.log("resule : "+dec.decode(res));
     });
   });
 
