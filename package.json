@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --mode=development",
     "watch": "webpack --progress --watch",
-    "start": "nodemon ./src/server.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/HajaAsmath/chatbox#readme",
   "dependencies": {
+    "atob": "^2.1.2",
     "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "css-loader": "^6.7.1",
     "express": "^4.17.3",

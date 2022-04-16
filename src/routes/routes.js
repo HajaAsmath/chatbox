@@ -1,14 +1,15 @@
-module.exports = function(app) {
+var cors = require('cors')
+var bodyParser = require('body-parser')
+
+module.exports = function(app, express) {
+  app.use(bodyParser.json())
     let controller = require('../controller/chatboxController')
-  app.route('/getPublicKey')
+    app.use(cors())
+    app.route('/getPublicKey')
     .get(controller.getPublicKey);
 
-    app.route('/saveText')
-    .post(controller.saveText);
+    app.post('/sendText', controller.saveText);
 
     app.route('/getLatestTexts')
     .get(controller.getLatestTexts);
-
-    app.route('/encrypt')
-    .get(controller.encrypt);
 };

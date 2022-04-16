@@ -21,10 +21,19 @@ html body {
 }
 
 #chat-container > span {
-    background-color: blanchedalmond;
-
     display: block;
-    margin: 2px;
+    margin: 5px 10px;
+
+}
+
+.self {
+    color: rgb(0 255 42);
+    text-align: left;
+}
+
+.other {
+    color: rgb(255 253 0);
+    text-align: right;
 }
 
 #input-container {
